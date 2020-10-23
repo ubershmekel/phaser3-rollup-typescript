@@ -1,4 +1,6 @@
-import Phaser from 'phaser';
+// src/scenes/Game.ts:23 Uncaught TypeError: Cannot read property 'Scene' of undefined
+//import Phaser from 'phaser';
+import 'phaser';
 
 export default class Demo extends Phaser.Scene {
   constructor() {
@@ -22,3 +24,18 @@ export default class Demo extends Phaser.Scene {
     });
   }
 }
+
+// src/scenes/Game.ts:28 Uncaught TypeError: Howl is not a constructor
+// `Howl` is undefined
+import {Howl, Howler} from 'howler';
+ 
+// Setup the new Howl.
+const sound = new Howl({
+  src: ['sound.webm', 'sound.mp3']
+});
+ 
+// Play the sound.
+sound.play();
+ 
+// Change global volume.
+Howler.volume(0.5);
